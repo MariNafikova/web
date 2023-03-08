@@ -59,6 +59,15 @@ export function _timer(callback) {
     hour = hour < 10 ? "0" + hour : hour;
 
     let updateTime = document.querySelector('input[type="time"]');
-    updateTime.value = hour + ":" + minute + ":" + second;
+
+    if (hour && minute && second === "00") {
+      updateTime.value = hour + ":" + minute + ":" + second;
+      let sound = new Howl({
+        src: ["src/sound/timer_ringtone.wav"],
+      });
+      sound.play();
+    } else {
+      updateTime.value = hour + ":" + minute + ":" + second;
+    }
   }
 }
