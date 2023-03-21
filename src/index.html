@@ -3,36 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Datetime superapp</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.js" integrity="sha512-dMiBqqEV5i3KqpAdsgQSSZ72DnNib7otY0X+b/Tnn1EmLym1dxuZ19csdZqBnfDniKd9bmNtzStQzuMrIa5Ngw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>Gallery</title>
 </head>
 <body>
-<button class="tablink" id="datecalc_page_btn">Калькулятор дат</button>
-<button class="tablink" id="timer_page_btn">Таймер</button>
-<div id="DateCalcPage" class="tabcontent">
-    <form id="datecalc">
-        <h3>Калькулятор дат</h3> <label>
-        <strong>Первая дата:</strong>
-        <input type="date" name="firstDate"/>
-    </label>
-        <label>
-            <strong>Вторая дата:</strong>
-            <input type="date" name="secondDate"/>
-        </label>
-        <button type="submit">Расчитать промежуток</button>
-        <p id="datecalc__result"></p>
-    </form>
-</div>
-<div id="TimerPage" class="tabcontent">
-    <h3>Таймер</h3>
-    <form onsubmit='return false'>
-        <input id="app-time" type="time" name="app-time" step="2" required/>
-        <div class="control">
-            <button type="submit" id="timer_start">Старт</button>
-            <button id="timer_stop">Стоп</button>
-            <button id="timer_reset">Сброс</button>
-        </div>
-    </form>
-</div>
+    <h1>Галерея</h1>
+    <div id="container">
+        <div class="gallery__items" id="gallery"></div>
+    </div>
+
 </body>
 </html>

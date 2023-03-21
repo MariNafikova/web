@@ -1,14 +1,6 @@
-// import "../index.html";
-import "../css/style.css";
-import { handleCalcDates, handleTimerControl } from "./handlers.js";
-import {
-  dateCalcForm,
-  timerStartBtn,
-  timerStopBtn,
-  timerResetBtn,
-} from "./constants.js";
+import "../styles/style.scss";
+import { drawGalleryItem } from "./item.js";
+import items from "../js/items.js";
 
-dateCalcForm.addEventListener("submit", handleCalcDates);
-timerStartBtn.addEventListener("click", handleTimerControl);
-timerStopBtn.addEventListener("click", handleTimerControl);
-timerResetBtn.addEventListener("click", handleTimerControl);
+const galleryRootElement = document.getElementById("gallery");
+items.map((item) => galleryRootElement.appendChild(drawGalleryItem(item)));

@@ -1,6 +1,4 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
 const TerserPlugin = require("terser-webpack-plugin");
 const path = require("path");
 
@@ -40,12 +38,24 @@ module.exports = {
         },
       },
       {
-        test: /\.(wav)$/,
+        test: /\.(png|svg|jpe?g|gif)$/i,
+        loader: "img-optimize-loader",
+        options: {
+          compress: {
+            mode: "high",
+            webp: true,
+            gifsicle: true,
+            disableOnDevelopment: false,
+          },
+        },
+      },
+      {
+        test: /\.(mp[3|4])$/i,
         loader: "file-loader",
       },
       {
-        test: /\.s?css$/,
-        use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
+        test: /\.s[ac]ss$/i,
+        use: ["style-loader", "css-loader", "sass-loader"],
       },
     ],
   },
@@ -55,10 +65,5 @@ module.exports = {
       filename: "index.html",
       excludeChunks: ["server"],
     }),
-    new MiniCssExtractPlugin({
-      filename: "css/[name].css",
-      chunkFilename: "[id].css",
-    }),
-    // new BundleAnalyzerPlugin(),
   ],
 };

@@ -28,8 +28,8 @@
     "file-loader": "^6.2.0",
     "html-loader": "^4.2.0",
     "html-webpack-plugin": "^5.5.0",
+    "img-optimize-loader": "^1.0.7",
     "mini-css-extract-plugin": "^2.7.3",
-    "parcel-bundler": "^1.12.5",
     "prettier": "2.8.4",
     "sass": "^1.59.2",
     "sass-loader": "^13.2.0",
@@ -38,10 +38,5 @@
     "webpack": "^5.76.1",
     "webpack-cli": "^5.0.1",
     "webpack-dev-server": "^4.11.1"
-  },
-  "dependencies": {
-    "lodash": "^4.17.21",
-    "luxon": "^3.3.0",
-    "webpack-bundle-analyzer": "^4.8.0"
   }
 }
